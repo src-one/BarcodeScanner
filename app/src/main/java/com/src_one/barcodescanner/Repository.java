@@ -1,11 +1,6 @@
 package com.src_one.barcodescanner;
 
-import android.util.Log;
-import android.widget.Toast;
-
-import org.json.JSONArray;
 import org.json.JSONObject;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
