@@ -39,13 +39,13 @@ public class MainActivity extends AppCompatActivity {
             if (result.getContents() == null) {
                 showToast("Result not found");
             } else {
-                showToast(result.getContents());
-
-                qrScan.initiateScan();
+                //showToast(result.getContents());
 
                 BarcodeParams params = new BarcodeParams(result.getFormatName(), result.getContents());
                 SubmitBarcodeTask task = new SubmitBarcodeTask();
                 task.execute(params);
+
+                qrScan.initiateScan();
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);

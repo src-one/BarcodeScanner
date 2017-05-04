@@ -23,9 +23,11 @@ public class Utils {
         urlConnection.setRequestProperty("Content-Type", mimeType);
         OutputStream outputStream = new BufferedOutputStream(urlConnection.getOutputStream());
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(outputStream, "utf-8"));
+
         writer.write(requestBody);
         writer.flush();
         writer.close();
+
         outputStream.close();
 
         urlConnection.connect();

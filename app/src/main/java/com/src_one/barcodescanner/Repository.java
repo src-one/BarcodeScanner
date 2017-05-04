@@ -1,8 +1,11 @@
 package com.src_one.barcodescanner;
 
 import org.json.JSONObject;
+
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 
 public class Repository {
@@ -35,8 +38,8 @@ public class Repository {
             } else {
                 inputStream = urlConnection.getErrorStream();
             }
-            /*
-            // parse stream
+
+
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
             String temp;
             String response = "";
@@ -44,11 +47,11 @@ public class Repository {
             while ((temp = bufferedReader.readLine()) != null) {
                 response += temp;
             }
+
             return response;
-            */
-            return "success";
         } catch (IOException e) {
             e.printStackTrace();
+
             return e.toString();
         } finally {
             if (urlConnection != null) {
